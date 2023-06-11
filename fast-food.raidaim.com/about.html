@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCC Fast-Food | About</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <section class="main">
+        <header>
+            <a href="#"><img src="img/logo.png" class="logo"></a>
+            <div class="toggle"></div>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="text">
+                <h2>About <span>CCC</span></h2>
+                <p>CCC was founded by XX (1890–1980), an entrepreneur who began selling fried chicken from his roadside restaurant in Washington, during the Great Depression. XX. identified the potential of the restaurant franchising concept and the first "China China Chicken" franchise opened in Fairfax in 1952. CCC popularized chicken in the fast-food industry, diversifying the market by challenging the established dominance of the hamburger. By branding himself as "XX", CCC became a prominent figure of American cultural history and his image remains widely used in CCC advertising to this day. However, the company's rapid expansion overwhelmed the aging XX. and he sold it to a group of investors led by YY. and ZZ. in 1964.</p>
+            </div>
+            <div class="abouts">
+                <div class="about active">
+                    <img src="img/kfc/kfc1.png" alt="">
+                </div>
+                <div class="about">
+                    <img src="img/kfc/kfc2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul class="foo">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            </ul>
+            <div class="sChange">
+                <p>Always Fresh</p>
+                <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+                <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        //toggle func
+        const mobile_toggle = document.querySelector('.toggle');
+        const mobile_nav = document.querySelector('.navigation');
+        mobile_toggle.onclick = function(){
+            mobile_toggle.classList.toggle('active')
+            mobile_nav.classList.toggle('active')
+        }
+
+        //about func
+        const about = document.querySelectorAll('.about');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        i = 0;
+
+        function ActiveSlide(n){
+            for(abouts of about)
+            abouts.classList.remove('active');
+            about[n].classList.add('active');
+        }
+
+        //function for next button (btn)
+        prev.addEventListener('click', function(){
+            if(i == 0){
+                i = about.length - 1;
+                ActiveSlide(i);
+            }
+            else
+            {
+                i--;
+                ActiveSlide(i);
+            }
+        })
+
+        //function for next button (btn)
+        next.addEventListener('click', function(){
+            if(i == about.length - 1){
+                i = 0;
+                ActiveSlide(i);
+            }
+            else
+            {
+                i++;
+                ActiveSlide(i);
+            }
+        })
+    </script>
+</body>
+</html>
